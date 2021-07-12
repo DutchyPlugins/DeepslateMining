@@ -5,7 +5,7 @@ import dev.array21.dutchycore.DutchyCore;
 import dev.array21.dutchycore.annotations.RegisterModule;
 import dev.array21.dutchycore.module.PluginModule;
 
-@RegisterModule(name = "DeepslateMining", version = "@VERSION@", author = "Dutchy76", infoUrl = "")
+@RegisterModule(name = "DeepslateMining", version = "@VERSION@", author = "Dutchy76", infoUrl = "https://github.com/DutchyPlugins/DeepslateMining")
 public class DeepslateMining extends PluginModule {
 
 	@Override

@@ -7,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class BlockDamageEventListener implements Listener {
 
@@ -18,7 +20,10 @@ public class BlockDamageEventListener implements Listener {
 				ItemMeta mainMeta = mainHand.getItemMeta();
 				int efficiencyLevel = mainMeta.getEnchantLevel(Enchantment.DIG_SPEED);
 				if(efficiencyLevel == 5) {
-					event.setInstaBreak(true);
+					PotionEffect pot = event.getPlayer().getPotionEffect(PotionEffectType.FAST_DIGGING);
+					if(pot != null && pot.getAmplifier() > 1) {
+						event.setInstaBreak(true);
+					}
 				}
 			}
 		}
